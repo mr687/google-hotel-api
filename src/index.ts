@@ -1,1 +1,1 @@
-console.log('Hello world')
+export * from './listing/hotel-listing'
