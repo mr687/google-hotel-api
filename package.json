@@ -1,6 +1,6 @@
 {
   "name": "google-hotel-api",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": {
     "name": "Daphinokio",
     "email": "dapino.dev@gmail.com",
@@ -12,6 +12,9 @@
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@types/node": "^20.2.3",
     "@typescript-eslint/eslint-plugin": "^5.59.6",

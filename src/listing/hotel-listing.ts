@@ -210,8 +210,14 @@ interface ListingPhone {
   value: string
 }
 
+interface HotelListingCreator {
+  addHotel: (hotel: HotelListing) => HotelListingCreator
+  writeFile: (path: string) => Promise<void>
+  writeString: () => string
+}
+
 /** Creates a new hotel listing XML document. */
-export function createHotelListing(options: Omit<ListingOptions, 'listing'>) {
+export function createHotelListing(options: Omit<ListingOptions, 'listing'>): HotelListingCreator {
   const { language, datum } = options
 
   const xmlOptions: XMLBuilderCreateOptions = { version: '1.0', encoding: 'UTF-8' }
@@ -308,7 +314,7 @@ export function createHotelListing(options: Omit<ListingOptions, 'listing'>) {
     }
 
     xmlContent.listings.listing.push(hotelXmlContent)
-    return obj
+    return thisFn
   }
 
   const writeString = (): string => {
@@ -333,11 +339,11 @@ export function createHotelListing(options: Omit<ListingOptions, 'listing'>) {
     return writeFile(path, xmlString, { encoding: 'utf-8' })
   }
 
-  const obj = {
+  const thisFn = {
     addHotel,
     writeFile,
     writeString,
   }
 
-  return obj
+  return thisFn
 }
