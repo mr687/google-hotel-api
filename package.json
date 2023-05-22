@@ -1,6 +1,13 @@
 {
   "name": "google-hotel-api",
   "version": "0.1.0",
+  "description": "Google Hotel Unofficial API",
+  "keywords": [
+    "google",
+    "hotel",
+    "api",
+    "unofficial"
+  ],
   "author": {
     "name": "Daphinokio",
     "email": "dapino.dev@gmail.com",
@@ -13,7 +20,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "/dist"
   ],
   "devDependencies": {
     "@types/node": "^20.2.3",
